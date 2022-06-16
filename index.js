@@ -20,6 +20,12 @@ async function run() {
         await client.connect();
         const database = client.db('carMechanic');
         const servicesCollection = database.collection('services');
+        // GET API
+        app.get('/services', async (req, res) => {
+            const cursor = servicesCollection.find({});
+            const services = await cursor.toArray();
+            res.json(services);
+        })
 
         // POST API
         app.post('/services', async (req, res) => {
