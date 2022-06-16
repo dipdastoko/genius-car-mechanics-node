@@ -29,7 +29,7 @@ async function run() {
                 "img": "https://i.ibb.co/JcJ4zwt/Background1.png"
             }
 
-            const result = await servicesCollection.insertOne(service);
+            // const result = await servicesCollection.insertOne(service);
             console.log(result);
         })
     }
